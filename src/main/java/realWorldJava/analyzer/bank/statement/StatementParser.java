@@ -26,7 +26,7 @@ public class StatementParser implements IStatementParser {
     public List<Transaction> parseLinesFrom(final List<String> lines) {
         final List<Transaction> bankTransactions = new ArrayList<>();
 
-        for (final String line: lines) {
+        for (final String line : lines) {
             bankTransactions.add(parserFrom(line));
         }
         return bankTransactions;

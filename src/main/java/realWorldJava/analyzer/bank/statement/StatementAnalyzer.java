@@ -1,7 +1,9 @@
 package realWorldJava.analyzer.bank.statement;
 
+import realWorldJava.analyzer.bank.SummaryStatistics;
 import realWorldJava.analyzer.bank.exporter.IExporter;
 import realWorldJava.analyzer.bank.transaction.Transaction;
+import realWorldJava.analyzer.bank.transaction.TransactionProcessor;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,23 +27,11 @@ public class StatementAnalyzer {
         final List<Transaction> bankTransactions =
                 bankStatementParser.parseLinesFrom(lines);
 
-        final StatementProcessor bankStatementProcessor =
-                new StatementProcessor(bankTransactions);
+        final TransactionProcessor bankStatementProcessor =
+                new TransactionProcessor(bankTransactions);
 
-        collectSummary(bankStatementProcessor);
-    }
+        final SummaryStatistics summaryStatistics = bankStatementProcessor.summarizeTransactions();
 
-    private static void collectSummary(StatementProcessor bankStatementProcessor) {
-
-        System.out.println("The total for all transactions is " +
-                bankStatementProcessor.calculateTotalAmount());
-
-        System.out.println("The total transactions in January is " +
-                bankStatementProcessor.calculateTotalInMonth(Month.JANUARY));
-        System.out.println("The total transactions in February is " +
-                bankStatementProcessor.calculateTotalInMonth(Month.FEBRUARY));
-
-        System.out.println("The total salary received is " +
-                bankStatementProcessor.calculateTotalForCategory("Salary"));
+        System.out.println(exporter.export(summaryStatistics));
     }
 }

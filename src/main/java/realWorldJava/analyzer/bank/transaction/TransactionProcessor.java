@@ -1,7 +1,10 @@
 package realWorldJava.analyzer.bank.transaction;
 
+import realWorldJava.analyzer.bank.SummaryStatistics;
+
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 public class TransactionProcessor {
@@ -11,10 +14,22 @@ public class TransactionProcessor {
         this.transactionList = transactionList;
     }
 
-    public double summarizeTransactions(final ITransactionSummarizer iTransactionSummarizer) {
+    public SummaryStatistics summarizeTransactions() {
+
+        final DoubleSummaryStatistics doubleSummaryStatistics = transactionList.stream()
+                .mapToDouble(Transaction::getAmount)
+                .summaryStatistics();
+
+        return new SummaryStatistics(doubleSummaryStatistics.getSum(),
+                doubleSummaryStatistics.getMax(),
+                doubleSummaryStatistics.getMin(),
+                doubleSummaryStatistics.getAverage());
+    }
+
+    public double summarizeTransactions(ITransactionSummarizer transactionSummarizer) {
         double result = 0;
         for (final Transaction transaction : transactionList) {
-            result = iTransactionSummarizer.summarizer(result, transaction);
+            result = transactionSummarizer.summarizer(result, transaction);
         }
         return result;
     }

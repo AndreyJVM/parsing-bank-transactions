@@ -15,6 +15,6 @@ public class MainApplication {
 
         final IExporter exporter = new HTMLExporter();
 
-        bankStatementAnalyzer.analyze("Exporter.csv", bankStatementParser, exporter);
+        bankStatementAnalyzer.analyze("records.csv", bankStatementParser, exporter);
     }
 }
