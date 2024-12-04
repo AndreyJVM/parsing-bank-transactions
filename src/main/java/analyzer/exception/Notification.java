@@ -1,4 +1,4 @@
-package realWorldJava.analyzer.exception;
+package analyzer.exception;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package realWorldJava.analyzer.bank.statement;
+package analyzer.bank.statement;
 
-import realWorldJava.analyzer.bank.SummaryStatistics;
-import realWorldJava.analyzer.bank.exporter.IExporter;
-import realWorldJava.analyzer.bank.transaction.Transaction;
-import realWorldJava.analyzer.bank.transaction.TransactionProcessor;
+import analyzer.bank.SummaryStatistics;
+import analyzer.bank.exporter.IExporter;
+import analyzer.bank.transaction.Transaction;
+import analyzer.bank.transaction.TransactionProcessor;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Month;
 import java.util.List;
 
 public class StatementAnalyzer {

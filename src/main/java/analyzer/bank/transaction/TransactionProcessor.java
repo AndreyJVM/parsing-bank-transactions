@@ -1,6 +1,6 @@
-package realWorldJava.analyzer.bank.transaction;
+package analyzer.bank.transaction;
 
-import realWorldJava.analyzer.bank.SummaryStatistics;
+import analyzer.bank.SummaryStatistics;
 
 import java.time.Month;
 import java.util.ArrayList;

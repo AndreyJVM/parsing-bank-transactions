@@ -1,4 +1,4 @@
-package realWorldJava.analyzer.bank;
+package analyzer.bank;
 
 public class SummaryStatistics {
 

@@ -1,4 +1,4 @@
-package realWorldJava.analyzer.bank.transaction;
+package analyzer.bank.transaction;
 
 @FunctionalInterface
 public interface ITransactionFilter {

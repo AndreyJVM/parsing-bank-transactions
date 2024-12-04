@@ -1,9 +1,9 @@
-package realWorldJava.analyzer.bank;
+package analyzer.bank;
 
 import org.junit.jupiter.api.Test;
-import realWorldJava.analyzer.bank.statement.IStatementParser;
-import realWorldJava.analyzer.bank.statement.StatementParser;
-import realWorldJava.analyzer.bank.transaction.Transaction;
+import analyzer.bank.statement.IStatementParser;
+import analyzer.bank.statement.StatementParser;
+import analyzer.bank.transaction.Transaction;
 
 import java.time.LocalDate;
 import java.time.Month;

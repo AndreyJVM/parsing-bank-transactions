@@ -1,6 +1,6 @@
-package realWorldJava.analyzer.bank.statement;
+package analyzer.bank.statement;
 
-import realWorldJava.analyzer.bank.transaction.Transaction;
+import analyzer.bank.transaction.Transaction;
 
 import java.util.List;
 

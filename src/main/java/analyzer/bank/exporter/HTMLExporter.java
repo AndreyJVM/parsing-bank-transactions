@@ -1,6 +1,6 @@
-package realWorldJava.analyzer.bank.exporter;
+package analyzer.bank.exporter;
 
-import realWorldJava.analyzer.bank.SummaryStatistics;
+import analyzer.bank.SummaryStatistics;
 
 public class HTMLExporter implements IExporter {
     @Override
